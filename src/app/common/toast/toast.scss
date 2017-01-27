@@ -1,0 +1,20 @@
+md-toast{
+	>span{
+		padding-top: 4px;
+		&.title{
+			font-size: 1.2em;
+		}
+	}
+	&.md-info-theme{
+		background-color: blue;
+	}
+	&.md-success-theme{
+		background-color: green;
+	}
+	&.md-warning-theme{
+		background-color: orange;
+	}
+	&.md-error-theme{
+		background-color: red;
+	}
+}

@@ -1,0 +1,26 @@
+<tr>
+	<td class="error" colspan="99" ng-show="vm.tablemessages.tableData.loadError">
+		<div>
+			<h3>{{vm.tablemessages.tableData.loadError | errorFormat}}</h3>
+			<section layout="row" layout-align="center center">
+				<md-button class="md-raised"  ng-click="vm.tablemessages.callServer(vm.tablemessages.tableData.tableState)" type="button">
+					Refresh
+				</md-button>
+			</section>
+		</div>
+	</td>
+	<td class="loading" colspan="99" ng-show="vm.tablemessages.tableData.isLoading">
+		<md-progress-linear class="page-loading md-accent" md-mode="indeterminate">
+		</md-progress-linear>
+	</td>
+	<td class="empty" colspan="99" ng-show="!vm.tablemessages.tableData.isLoading && !vm.tablemessages.tableData.loadError && vm.tablemessages.serverItems.length === 0">
+		<div>
+			<h3>No items found</h3>
+			<section layout="row" layout-align="center center">
+				<md-button class="md-primary md-raised"  ng-click="vm.tablemessages.callServer(vm.tablemessages.tableData.tableState)" type="button">
+					Refresh
+				</md-button>
+			</section>
+		</div>
+	</td>
+</tr>

@@ -1,0 +1,32 @@
+<div layout="row" layout-align="space-between center" style="padding: 10px;">
+    <div class="search" ng-if="vm.search">
+        <md-input-container>
+            <label>Search</label>
+            <input class="input-sm form-control" type="search"
+                ng-model-options="{debounce: 500}"
+                ng-change="vm.tabletoolbar.callServer(vm.tabletoolbar.tableData.tableState)"
+                ng-model="vm.tabletoolbar.tableData.tableState.search.predicateObject.$"/>
+        </md-input-container>
+    </div>
+    <page-help></page-help>
+    <div layout="row" style="margin-left: auto; padding-right: 20px;">
+        <div class="action" ng-show="vm.tabletoolbar.canAdd && vm.tabletoolbar.add">
+            <md-button class="md-fab md-raised md-accent" ng-click="vm.tabletoolbar.add($event)" aria-label="add"
+                type="button" style="font-size:24px;">
+                <md-icon class="mdi mdi-plus"></md-icon>
+            </md-button>
+        </div>
+        <div class="action" ng-show="vm.tabletoolbar.canDownload && vm.tabletoolbar.download">
+            <md-button class="md-fab md-raised md-accent" ng-click="vm.tabletoolbar.download($event)" aria-label="download"
+                type="button" style="font-size:24px;">
+                <md-icon class="mdi mdi-download"></md-icon>
+            </md-button>
+        </div>
+        <div class="action" ng-show="vm.tabletoolbar.filter">
+            <md-button class="md-fab md-raised md-accent" ng-click="vm.tabletoolbar.filter($event)" aria-label="filter"
+                type="button" style="font-size:24px;">
+                <md-icon class="mdi mdi-magnify"></md-icon>
+            </md-button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+{
+  "strict": true,
+  "bitwise": true,
+  "curly": true,
+  "eqeqeq": false,
+  "eqnull": true,
+  "latedef": false,
+  "noarg": true,
+  "undef": true,
+  "unused": true,
+  "validthis": true,
+  "jasmine": true,
+  "loopfunc": true,
+  "globals": {
+    "angular": false,
+    "inject": false,
+    "module": false,
+    "_": false,
+    "s": false,
+    "moment": false,
+    "Countly": false,
+    "window" : false,
+    "document" : false,
+    "console": false,
+    "escape" : false
+  }
+}

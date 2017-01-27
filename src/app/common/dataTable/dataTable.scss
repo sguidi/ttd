@@ -1,0 +1,184 @@
+.data-table {
+    border-spacing: 0;
+    width: 100%;
+    margin-bottom: 0;
+
+    th,
+    td {
+        padding: 6px;
+        text-align: left;
+    }
+    thead {
+        tr{
+            &[tabletoolbar] {
+                th {
+                    padding-left: 0;
+                    padding-right: 0;
+                    .search {
+                        float: left;
+                    }
+                    .action {
+                        float: right;
+                    }
+                }
+            }
+            &.header {
+                th {
+                    background: $greyBars;
+                    text-transform: capitalize;
+                    font-weight: 500;
+                    font-size: 14px;
+                    text-align: left;
+                    &[st-sort]{
+                        &:before{
+                            padding-right: 2px;
+                            display: inline-block;
+                            font: normal normal normal 36px/2 MaterialDesignIcons;
+                            font-size: inherit;
+                            text-rendering: auto;
+                            -webkit-font-smoothing: antialiased;
+                            -moz-osx-font-smoothing: grayscale;
+                            transform: translate(0, 0);
+                            content: "\f4a3";
+                            font-weight: bold;
+                            color: black;
+                        }
+                        &.st-sort-ascent:before{
+                            content: "\f138";
+                        }
+                        &.st-sort-descent::before {
+                            content: "\f148";
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            min-height: 36px;
+            cursor: pointer;
+            &:nth-child(odd) {
+                background-color: $greyBars;
+            }
+            &:hover {
+                color: $accentColour;
+            }
+            td {
+
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                &.icon{
+                    padding: 0 6px;
+                    span{
+                        font-size: 2em;
+                        display: inline;
+                    }
+                    >span{
+                        height: 36px;
+                        width: 36px;
+                    }
+                }
+                .md-icon-button {
+                    height: 36px;
+                    width: 36px;
+                }
+                .loading {
+                    text-align: -webkit-center;
+                    >div {
+                        padding: 20px 0px;
+                    }
+                }
+            }
+            &[tablemessages] {
+                background-color: white;
+                min-height: 0px;
+                td{
+                    padding:0;
+                    //Loading
+                    &.loading{
+                        md-progress-linear[md-mode="indeterminate"]{
+                            &.page-loading{
+                                position: relative;
+                                .md-container{
+                                    top:0;
+                                }
+                            }
+                        }
+                    }
+                    //Empty
+                    &.empty, &.error{
+                        background-color: rgba(240, 240, 240, 0.53);
+                        text-align: center;
+                        &:hover{
+                            cursor: default;
+                        }
+                    }
+                    &.empty{
+                        background-color: rgba(240, 240, 240, 0.53);
+                        &:hover{
+                            color: black;
+                        }
+                    }
+                    &.error{
+                        background-color: $accentColour;
+                        color: white;
+                        &:hover{
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    tfoot {
+        [st-pagination] {
+            .pagination {
+                padding-left: 0px;
+                list-style: none;
+                text-align: center;
+                margin: 6px 0 0 0;
+                li {
+                    cursor: pointer;
+                    display: inline;
+                    padding: 4px;
+                    border-bottom: 3px solid transparent;
+                    &:hover {
+                        color: $accentColour;
+                    }
+                    &.active {
+                        border-color: $accentColour;
+                    }
+                    &.pageSelect{
+                        position: relative;
+                        top: -6px;
+                        &:hover{
+                            cursor: default;
+                            color: black;
+                        }
+                        .select-page {
+                            width: 50px;
+                            text-align: center;
+                        }
+                    }
+                    a{
+                        .mdi {
+                            font-size : 2em;
+                        }
+                        md-input-container{
+                            display: inline;
+                            padding: 0 5px 0 0;
+                            input{
+                                display: inline;
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }    
+}

@@ -1,0 +1,8 @@
+<md-toast md-theme="{{toastCtrl.type}}" layout="column" layout-align="space-around start">
+	<span class="title" ng-if="toastCtrl.title">{{toastCtrl.title}}</span>
+	<span class="content "ng-class="toastCtrl.type" flex>{{toastCtrl.content}}</span>
+	<md-button ng-if="toastCtrl.close" type="button">
+		<span ng-if="!toastCtrl.closeText">X</span>
+		<span ng-if="toastCtrl.closeText">{{toastCtrl.closeText}}</span>
+	</md-button>
+</md-toast>

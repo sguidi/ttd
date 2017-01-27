@@ -1,0 +1,256 @@
+/**
+ *  Do not remove this comments bellow. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+
+// bower:scss
+// endbower
+@import 'materialdesignicons';
+$primaryColour: rgba(169, 17, 100, 1);
+$accentColour: rgba(169, 17, 100, 1);
+$headerColour: rgba(41, 41, 41, 1);
+$carcoal: #404041;
+$darkLines: #e3e3e3;
+$greyBars: #f0f0f0;
+$lines: #f9f9f9;
+$lightLines: #fafafa;
+$warn: rgb(246, 139, 31);
+$error: rgb(206, 0, 0);
+body {
+    overflow: hidden;
+}
+
+///////////////////////////////
+// Media queries
+///////////////////////////////
+$phone: 640px;
+$tablet: 768px;
+$desktop: 1024px;
+
+///////////////////////////////
+// Global Material setting
+//////////////////////////////
+md-toolbar {
+    background: $headerColour;
+}
+
+.md-warn {
+    color: $warn !important;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.display-inline{
+    display: inline !important;
+}
+md-list-item.md-2-line .md-list-item-text, md-list-item.md-2-line > .md-no-style .md-list-item-text{
+    min-width: 100%;
+}
+
+md-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+ui-view, [ui-view] {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.header {
+}
+
+md-select-menu {
+    max-height: initial !important;
+    md-content {
+        max-height: initial !important;
+    }
+}
+
+.md-button {
+    text-transform: inherit;
+}
+
+@media (min-width: 600px) {
+    form[name="details"] {
+        [layout="column"]:not(:first-child):not([layout-no-padding]) {
+            padding-left: 20px;
+        }
+    }
+}
+
+.toast-top-center {
+    top: 65px;
+}
+
+form {
+    fieldset {
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+    .title {
+        padding: 8px 0;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+    .subtitle {
+        padding: 8px 0;
+        font-weight: bold;
+    }
+}
+
+.parent-title {
+    padding-left: 10px;
+}
+
+.list-menu {
+    &[layout="column"] {
+        .md-button {
+            text-align: left;
+        }
+    }
+}
+
+.textarea {
+    width: 100%;
+    padding-bottom: 8px;
+    textarea {
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        &.md-input {
+            min-height: 58px;
+        }
+    }
+}
+
+md-list-item {
+    &[layout-no-padding] {
+        .md-list-item-inner {
+            position: relative;
+            left: -16px;
+        }
+    }
+}
+
+[layout="column"] {
+    &[layout-no-padding] {
+        padding-left: 0;
+    }
+}
+
+md-input-container {
+    [checkbox-group] {
+        -webkit-order: 1;
+        -ms-flex-order: 1;
+        order: 2;
+        position: relative;
+        top: 26px;
+        padding-bottom: 8px;
+    }
+    
+    span.prefix {
+        position: absolute;
+        top: 25px;
+        &.disabled {
+            color: rgba(0,0,0,0.26);
+            top: 25px;
+        }
+
+    }
+
+    span.prefix + input {
+        padding-left: 11px;
+    }
+
+    span.prefix.disabled + input {
+        padding-left: 12px;
+    }
+}
+
+md-radio-group {
+    &[layout="row"] {
+        &[column="2"] {
+            flex-wrap: wrap;
+            md-radio-button {
+                min-width: 42%;
+            }
+        }
+    }
+}
+
+.input-error-message {
+    font-size: 12px;
+    color: transparent;
+    &.visible {
+        color: rgb(244, 67, 54);
+    }
+}
+
+theme-preview {
+    @media (max-width: $tablet) {
+        max-width: 500px;
+    }
+    @media (max-width: $phone) {
+        max-width: 400px;
+    }
+}
+
+.help-text {
+    padding-bottom: 8px;
+    font-size: 0.8em;
+    color: rgba(0, 0, 0, 0.70);
+}
+
+md-dialog {
+    .error{
+        background-color: $accentColour;
+        color: white;
+        margin: 0;
+        padding: 12px;
+    }
+    
+    &.pdf {
+        min-height: 90%;
+        max-height: 90%;
+        min-width: 90%;
+        max-width: 90%;
+        position: relative;
+        md-dialog-content{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            iframe{
+                width: 100%;
+                height: 99%;
+                box-sizing: border-box;
+            }
+        }
+    }
+}
+
+
+/**
+ *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+
+// injector
+// endinjector

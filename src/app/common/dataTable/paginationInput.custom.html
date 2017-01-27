@@ -1,0 +1,27 @@
+<nav ng-if="pages.length >= 2">
+  <ul class="pagination">
+    <li>
+    	<a ng-click="selectPage(1)">
+    		<span class="mdi mdi-chevron-double-left"></span>
+    	</a>
+    </li>
+    <li>
+    	<a ng-click="selectPage(currentPage - 1)">
+    		<span class="mdi mdi-chevron-left"></span>
+		</a>
+    </li>
+    <li class="pageSelect">
+    	<a><page-select></page-select></a><span>of {{numPages}}</span>
+    </li>
+    <li>
+    	<a ng-click="selectPage(currentPage + 1)">
+    		<span class="mdi mdi-chevron-right"></span>
+    	</a>
+    </li>
+    <li>
+    	<a ng-click="selectPage(numPages)">
+    		<span class="mdi mdi-chevron-double-right"></span>
+    	</a>
+    </li>
+  </ul>
+</nav>
